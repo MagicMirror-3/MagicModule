@@ -27,7 +27,8 @@ Module.register("MagicModule", {
 
     start: function () {
         console.log("MagicModule started! Trying to hide me...");
-
+        this.sendSocketNotification("Establish connection to helper");
+        
         // Fade module out
         // this.hide(this.config.fadeDuration);
     },
