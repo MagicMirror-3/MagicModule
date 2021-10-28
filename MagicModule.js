@@ -29,7 +29,7 @@ Module.register("MagicModule", {
         Log.log("MagicModule started! Trying to hide me...");
 
         // Fade module out
-        this.hide(this.config.fadeDuration);
+        // this.hide(this.config.fadeDuration);
 
         Log.log("Sending socket notification to helper");
         this.sendSocketNotification("Hallo Helper ich bins", {});
