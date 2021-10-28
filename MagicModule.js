@@ -8,7 +8,8 @@
 
 Module.register("MagicModule", {
     defaults: {
-        fadeDuration: 2500
+        fadeInDuration: 2000,
+        fadeOutDuration: 4000
     },
 
     requiresVersion: "2.17.0",
@@ -30,11 +31,9 @@ Module.register("MagicModule", {
     },
 
     socketNotificationReceived: function (notification, payload) {
-        Log.log("Socket notification received: " + notification + ", " + payload);
-
         if (notification === "refresh") {
             // Start showing module and refresh the page after the fade
-            this.show(this.config.fadeDuration, function () {
+            this.show(this.config.fadeInDuration, function () {
                 location.reload();
             });
             console.log("Showing MagicModule again and then refreshing.");
@@ -46,7 +45,7 @@ Module.register("MagicModule", {
             console.log("DOMs created! Now starting the hide animation...");
 
             // Fade module out
-            this.hide(this.config.fadeDuration);
+            this.hide(this.config.fadeOutDuration);
 
             console.log("Hiding started!");
         }

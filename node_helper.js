@@ -15,7 +15,7 @@ module.exports = Node_helper.create({
 
         this.expressApp.post("/refresh", function (req, res) {
             self.sendSocketNotification("refresh");
-            res.send("<html>POST request received!</html>");
+            res.send(200);
         });
 
     }
