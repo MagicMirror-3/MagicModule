@@ -42,11 +42,11 @@ Module.register("MagicModule", {
     },
 
     notificationReceived: function (notification, payload, sender) {
-        if (!sender && notification === "MODULE_DOM_CREATED") {
-            console.log("Module dom created! Now starting the hide animation...");
+        if (!sender && notification === "DOM_OBJECTS_CREATED") {
+            console.log("DOMs created! Now starting the hide animation...");
 
             // Fade module out
-            // this.hide(this.config.fadeDuration);
+            this.hide(this.config.fadeDuration);
 
             console.log("Hiding started!");
         }
