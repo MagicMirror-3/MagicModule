@@ -30,6 +30,9 @@ Module.register("MagicModule", {
 
         // Fade module out
         this.hide(this.config.fadeDuration);
+
+        Log.log("Sending socket notification to helper");
+        this.sendSocketNotification("Hallo Helper ich bins", {});
     },
 
     socketNotificationReceived: function (notification, payload) {

@@ -6,7 +6,7 @@
  * By Niklas Drössler, Simon Stauss.
  */
 
-let NodeHelper = require("node_helper");
+var NodeHelper = require("node_helper");
 
 module.exports = NodeHelper.create({
     start: function() {
@@ -16,8 +16,12 @@ module.exports = NodeHelper.create({
         this.expressApp.post("/refresh", function (req, res) {
             self.sendSocketNotification("refresh", req);
             res.statusCode = 200;
-            res.send();
+            res.send("POST request to MagicModule");
         });
         Log.log("Refresh route created!");
+    },
+
+    socketNotificationReceived: function (notification, payload) {
+        Log.log("Notification received: " + notification + ", " + payload);
     }
 });
