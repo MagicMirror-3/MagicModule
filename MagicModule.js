@@ -8,7 +8,7 @@
 
 Module.register("MagicModule", {
     defaults: {
-        fadeDuration: 5000
+        fadeDuration: 2500
     },
 
     requiresVersion: "2.17.0",
@@ -46,7 +46,7 @@ Module.register("MagicModule", {
             console.log("Module dom created! Now starting the hide animation...");
 
             // Fade module out
-            this.hide(this.config.fadeDuration);
+            // this.hide(this.config.fadeDuration);
 
             console.log("Hiding started!");
         }
