@@ -33,9 +33,13 @@ Module.register("MagicModule", {
     },
 
     socketNotificationReceived: function (notification, payload) {
-        console.log("Notification received: " + notification + ", " + payload);
+        Log.log("Notification received: " + notification + ", " + payload);
 
         // Start showing module and refresh the page after the fade
         this.show(this.config.fadeDuration, location.reload);
+    },
+
+    notificationReceived: function (notification, payload, sender) {
+        console.log("MagicModule received notification: " + notification);
     }
 });

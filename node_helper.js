@@ -14,10 +14,10 @@ module.exports = Node_helper.create({
         const self = this;
         console.log("Creating refresh route...");
         this.expressApp.post("/refresh", function (req, res) {
-            self.sendSocketNotification("refresh", null);
+            self.sendSocketNotification("refresh");
             console.log("socket notification send");
-            res.send("POST request to MagicModule");
+            res.statusCode(200).send("POST request to MagicModule");
         });
-        this.sendSocketNotification("Refresh route created!");
+        console.log("Refresh route created!");
     }
 });
