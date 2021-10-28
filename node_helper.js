@@ -12,12 +12,11 @@ module.exports = Node_helper.create({
     start: function() {
         // Create a new route triggering the refresh
         const self = this;
-        console.log("Creating refresh route...");
+
         this.expressApp.post("/refresh", function (req, res) {
             self.sendSocketNotification("refresh");
-            console.log("socket notification send");
-            res.send("POST request to MagicModule");
+            res.send("<html>POST request received!</html>");
         });
-        console.log("Refresh route created!");
+
     }
 });

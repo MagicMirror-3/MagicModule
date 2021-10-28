@@ -26,21 +26,27 @@ Module.register("MagicModule", {
     },
 
     start: function () {
-        console.log("MagicModule started! Trying to hide me...");
         this.sendSocketNotification("Establish connection to helper");
-        
-        // Fade module out
-        // this.hide(this.config.fadeDuration);
     },
 
     socketNotificationReceived: function (notification, payload) {
-        Log.log("Notification received: " + notification + ", " + payload);
+        Log.log("Socket notification received: " + notification + ", " + payload);
 
-        // Start showing module and refresh the page after the fade
-        this.show(this.config.fadeDuration, location.reload);
+        if (notification === "refresh") {
+            // Start showing module and refresh the page after the fade
+            this.show(this.config.fadeDuration, location.reload);
+            console.log("Showing MagicModule again and then refreshing.");
+        }
     },
 
     notificationReceived: function (notification, payload, sender) {
-        console.log("MagicModule received notification: " + notification);
+        if (!sender && notification === "MODULE_DOM_CREATED") {
+            console.log("Module dom created! Now starting the hide animation...");
+
+            // Fade module out
+            this.hide(this.config.fadeDuration);
+
+            console.log("Hiding started!");
+        }
     }
 });
