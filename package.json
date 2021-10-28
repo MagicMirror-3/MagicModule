@@ -1,7 +1,7 @@
 {
-  "name": "MagicModule",
+  "name": "magic-module",
   "version": "1.0.0",
-  "description": "MagicMirror² module to fade contents in and out and support different home screens by updating the config",
+  "description": "MagicMirror² module to fade contents in and out",
   "main": "MagicModule.js",
   "repository": {
     "type": "git",

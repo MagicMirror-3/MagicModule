@@ -15,18 +15,22 @@ Module.register("MagicModule", {
     requiresVersion: "2.17.0",
 
     getDom: function () {
+        // Create a div with the overlay class to span the entire page as an overlay
         let wrapper = document.createElement("div");
         wrapper.className = "overlay";
         return wrapper;
     },
 
     getStyles: function () {
+        // Return the needed css file
         return [
             "MagicModule.css"
         ];
     },
 
     start: function () {
+        // Establish a connection to the node_helper
+        // This is necessary in order for the refresh system to work
         this.sendSocketNotification("Establish connection to helper");
     },
 
@@ -36,18 +40,13 @@ Module.register("MagicModule", {
             this.show(this.config.fadeInDuration, function () {
                 location.reload();
             });
-            console.log("Showing MagicModule again and then refreshing.");
         }
     },
 
     notificationReceived: function (notification, payload, sender) {
         if (!sender && notification === "DOM_OBJECTS_CREATED") {
-            console.log("DOMs created! Now starting the hide animation...");
-
-            // Fade module out
+            // Fade module out once every dom is created
             this.hide(this.config.fadeOutDuration);
-
-            console.log("Hiding started!");
         }
     }
 });
