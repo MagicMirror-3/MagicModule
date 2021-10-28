@@ -18,7 +18,7 @@ module.exports = NodeHelper.create({
             self.sendSocketNotification("refresh");
 
             // Respond with "Ok"
-            res.send(200);
+            res.sendStatus(200);
         });
     }
 });
