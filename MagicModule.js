@@ -26,17 +26,17 @@ Module.register("MagicModule", {
     },
 
     start: function () {
-        Log.log("MagicModule started! Trying to hide me...");
+        console.log("MagicModule started! Trying to hide me...");
 
         // Fade module out
         // this.hide(this.config.fadeDuration);
 
-        Log.log("Sending socket notification to helper");
+        console.log("Sending socket notification to helper");
         this.sendSocketNotification("Hallo Helper ich bins", {});
     },
 
     socketNotificationReceived: function (notification, payload) {
-        Log.log("Notification received: " + notification + ", " + payload);
+        console.log("Notification received: " + notification + ", " + payload);
 
         // Start showing module and refresh the page after the fade
         this.show(this.config.fadeDuration, location.reload);
