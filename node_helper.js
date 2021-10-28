@@ -16,7 +16,7 @@ module.exports = Node_helper.create({
         this.expressApp.post("/refresh", function (req, res) {
             self.sendSocketNotification("refresh");
             console.log("socket notification send");
-            res.statusCode(200).send("POST request to MagicModule");
+            res.send("POST request to MagicModule");
         });
         console.log("Refresh route created!");
     }
