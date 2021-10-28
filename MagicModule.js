@@ -8,7 +8,7 @@
 
 Module.register("MagicModule", {
     defaults: {
-        fadeDuration: 1000
+        fadeDuration: 5000
     },
 
     requiresVersion: "2.17.0",
@@ -34,7 +34,9 @@ Module.register("MagicModule", {
 
         if (notification === "refresh") {
             // Start showing module and refresh the page after the fade
-            this.show(this.config.fadeDuration, location.reload);
+            this.show(this.config.fadeDuration, function () {
+                location.reload();
+            });
             console.log("Showing MagicModule again and then refreshing.");
         }
     },
