@@ -1,0 +1,11 @@
+/* global Module */
+
+/* Magic Mirror
+ * Module: MagicModule
+ *
+ * By Niklas Drössler, Simon Stauss.
+ */
+
+.overlay {
+    background-color: #000000;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "MagicModule",
+  "version": "1.0.0",
+  "description": "MagicMirror² module to fade contents in and out and support different home screens by updating the config",
+  "main": "MagicModule.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n1klasD/MagicModule.git"
+  },
+  "author": {
+    "name": "Niklas Drössler",
+    "email": "inf19016@lehre.dhbw-stuttgart.de"
+  },
+  "maintainers": ["Simon Stauss"],
+  "dependencies": {
+  }
+}
